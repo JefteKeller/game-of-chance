@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-100%, -50%);
+}
+
+:root {
+  --mobile-main-border-radius: 15px;
+  --mobile-main-margin: 1rem auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  font-size: 16px;
+  font-family: "Yatra One", cursive;
+  color: #000;
+  letter-spacing: 0.1rem;
+  background: url("../images/rps/bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: var(--mobile-main-margin);
+  border: 3px #cf939300 solid;
+  border-radius: var(--mobile-main-border-radius);
+  background-color: rgba(0, 0, 0, 0.212);
+  width: 90%;
+  align-self: center;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  outline: transparent;
+}
+
+.button {
+  width: 30%;
+  height: 100%;
+  border: 2px solid #20100649;
+  border-radius: var(--mobile-main-border-radius);
+  transition: background 0.5s;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background: rgba(0, 0, 0, 0.205);
+}
+
+.button .buttonImg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  width: 60%;
+  height: 100%;
+}
+
+.pedra {
+  background: url("../images/rps/rock.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.papel {
+  background: url("../images/rps/paper.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.tesoura {
+  background: url("../images/rps/scissor.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#choiceTitle {
+  width: 90%;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 3px #cf939300 solid;
+  border-radius: var(--mobile-main-border-radius);
+  background-color: rgba(0, 0, 0, 0.212);
+}
+
+#boxGame {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+}
+
+#boxGame,
+#resultBox {
+  transition: 0.5s ease-in-out;
+}
+
+#rpsGame {
+  height: 63%;
+  background-image: url(../images/rps/bg-sunset.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+#inputButtons {
+  margin: var(--mobile-main-margin);
+  text-align: center;
+  width: 80%;
+  height: 20%;
+}
+
+#resultBox {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+#resultTitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #000000;
+  font-variant: small-caps;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 3px #cf939300 solid;
+  border-radius: var(--mobile-main-border-radius);
+  background-color: rgba(0, 0, 0, 0.212);
+  width: 95%;
+  align-self: center;
+}
+
+#resultContainer {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.playerChoiceTitle {
+  font-size: 0.8rem;
+  border-bottom: thick solid #000;
+  border-radius: var(--mobile-main-border-radius);
+}
+
+.resultImgBox {
+  border: thin solid #000;
+  width: 40%;
+  height: 30%;
+  margin: 0.5rem auto;
+}
+
+.choiceContainer {
+  height: 60%;
+}
+
+#resultText {
+  width: 80%;
+  text-align: center;
+  margin: var(--mobile-main-margin);
+  background-color: rgba(0, 0, 0, 0.15);
+  border: 3px rgba(0, 0, 0, 0) solid;
+  border-radius: var(--mobile-main-border-radius);
+}
+
+#reset {
+  width: 60%;
+  height: 40%;
+  margin: var(--mobile-main-margin);
+}
+
+#resetButton {
+  width: 100%;
+  height: 25%;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: var(--mobile-main-border-radius);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    margin: 3rem auto;
+    padding: 2rem;
+    font-size: 2.5rem;
+  }
+
+  #resultTitle {
+    width: 40%;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+  }
+
+  #resultBox {
+    width: 80%;
+    overflow: hidden;
+  }
+
+  .button {
+    width: 10%;
+    height: 80%;
+    margin: 0 1rem;
+  }
+
+  #choiceTitle {
+    width: 30%;
+    font-size: 1.5rem;
+  }
+
+  #rpsGame {
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .playerChoiceTitle {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  #resultText {
+    font-size: 1.2rem;
+    padding: 2.5rem;
+  }
+
+  #resetButton {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  #resetButton:hover,
+  #resetButton:focus {
+    background: rgba(0, 0, 0, 0.205);
+  }
+}
