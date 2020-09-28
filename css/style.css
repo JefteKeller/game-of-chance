@@ -7,14 +7,26 @@
 }
 
 :root {
-  --mobile-main-border-radius: 15px;
-  --mobile-main-margin: 1rem auto;
+  --main-margin-padding: 1rem;
+  --main-centralize-margin: 0 auto;
+  --main-title-padding-margin: 0.5rem;
+  --main-title-background-color: rgba(0, 0, 0, 0.215);
+  --main-text-background-color: rgba(0, 0, 0, 0.15);
+
+  --main-border-size: 3px;
+  --main-no-border-color: rgba(0, 0, 0, 0);
+  --main-border-color: rgba(0, 0, 0, 1);
+  --main-border-radius: 15px;
+  --main-border-bottom-radius: 0 0 15px 15px;
+
+  --main-transition-page: 0.5s ease-in-out;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 html,
@@ -37,32 +49,31 @@ main {
 h1 {
   text-align: center;
   font-size: 1.8rem;
-  margin: var(--mobile-main-margin);
-  border: 3px #cf939300 solid;
-  border-radius: var(--mobile-main-border-radius);
-  background-color: rgba(0, 0, 0, 0.212);
+  margin: var(--main-margin-padding) auto;
+  border: var(--main-border-size) var(--main-no-border-color) solid;
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-title-background-color);
   width: 90%;
   align-self: center;
 }
 
 button {
   background-color: transparent;
-  border: 0;
   outline: transparent;
 }
 
 .button {
   width: 30%;
   height: 100%;
-  border: 2px solid #20100649;
-  border-radius: var(--mobile-main-border-radius);
+  border: var(--main-border-size) dashed var(--main-border-color);
+  border-radius: var(--main-border-radius);
   transition: background 0.5s;
   cursor: pointer;
 }
 
 .button:hover,
 .button:focus {
-  background: rgba(0, 0, 0, 0.205);
+  background: var(--main-title-background-color);
 }
 
 .button .buttonImg {
@@ -92,17 +103,18 @@ button {
 }
 
 #choiceTitle {
-  width: 90%;
-  margin: 0.5rem auto;
-  padding: 0.5rem;
+  width: 80%;
+  margin: var(--main-title-padding-margin) auto;
+  padding: var(--main-title-padding-margin);
   font-size: 1.5rem;
   text-align: center;
-  border: 3px #cf939300 solid;
-  border-radius: var(--mobile-main-border-radius);
-  background-color: rgba(0, 0, 0, 0.212);
+  border: var(--main-border-size) var(--main-no-border-color) solid;
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-title-background-color);
 }
 
 #boxGame {
+  width: 100%;
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -113,7 +125,7 @@ button {
 
 #boxGame,
 #resultBox {
-  transition: 0.5s ease-in-out;
+  transition: var(--main-transition-page);
 }
 
 #rpsGame {
@@ -121,86 +133,97 @@ button {
   background-image: url(../images/rps/bg-sunset.jpg);
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: cover;
 }
 
 #inputButtons {
-  margin: var(--mobile-main-margin);
+  margin: var(--main-margin-padding) auto;
   text-align: center;
   width: 80%;
   height: 20%;
 }
 
 #resultBox {
-  margin: 0 auto;
+  margin: var(--main-centralize-margin);
   width: 100%;
   height: 100%;
-  overflow: auto;
 }
 
 #resultTitle {
   text-align: center;
   font-size: 1.3rem;
-  color: #000000;
-  font-variant: small-caps;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  border: 3px #cf939300 solid;
-  border-radius: var(--mobile-main-border-radius);
-  background-color: rgba(0, 0, 0, 0.212);
-  width: 95%;
+  margin: var(--main-title-padding-margin) auto;
+  padding: var(--main-title-padding-margin);
+  border: var(--main-border-size) var(--main-no-border-color) solid;
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-title-background-color);
+  width: 70%;
   align-self: center;
 }
 
 #resultContainer {
   width: 95%;
   height: 100%;
-  margin: 0 auto;
+  margin: var(--main-centralize-margin);
   display: flex;
   flex-wrap: wrap;
   text-align: center;
 }
 
 .playerChoiceTitle {
+  padding: var(--main-title-padding-margin) 0;
+  width: 100%;
+  height: 30%;
+
   font-size: 0.8rem;
-  border-bottom: thick solid #000;
-  border-radius: var(--mobile-main-border-radius);
+  font-variant: small-caps;
+  background-color: var(--main-text-background-color);
+
+  border-bottom: 6px solid var(--main-border-color);
+  border-radius: var(--main-border-bottom-radius);
 }
 
 .resultImgBox {
-  border: thin solid #000;
+  border: var(--main-border-size) double var(--main-border-color);
   width: 40%;
-  height: 30%;
-  margin: 0.5rem auto;
+  height: 25%;
+  margin: var(--main-title-padding-margin) auto;
 }
 
 .choiceContainer {
-  height: 60%;
+  height: 70%;
 }
 
 #resultText {
   width: 80%;
   text-align: center;
-  margin: var(--mobile-main-margin);
-  background-color: rgba(0, 0, 0, 0.15);
-  border: 3px rgba(0, 0, 0, 0) solid;
-  border-radius: var(--mobile-main-border-radius);
+  align-self: center;
+  margin: var(--main-margin-padding) auto;
+  padding: var(--main-margin-padding);
+  background-color: var(--main-text-background-color);
+  border: 2px var(--main-border-color) dashed;
+  border-radius: var(--main-border-radius);
 }
 
 #reset {
   width: 60%;
   height: 40%;
-  margin: var(--mobile-main-margin);
+  margin: var(--main-margin-padding) auto;
 }
 
 #resetButton {
+  font-size: 1.3rem;
+  font-variant: small-caps;
+  font-family: inherit;
   width: 100%;
   height: 25%;
-  background-color: rgba(0, 0, 0, 0.15);
-  border-radius: var(--mobile-main-border-radius);
+  border: var(--main-border-color) solid var(--main-border-size);
+  background-color: var(--main-text-background-color);
+  border-radius: var(--main-border-radius);
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
   h1 {
     margin: 3rem auto;
     padding: 2rem;
@@ -209,34 +232,31 @@ button {
 
   #resultTitle {
     width: 40%;
-    margin: 1rem auto;
+    margin: var(--main-margin-padding) auto;
     font-size: 1.5rem;
   }
 
   #resultBox {
-    width: 80%;
-    overflow: hidden;
+    min-width: 60%;
+    max-width: 70%;
   }
 
   .button {
-    width: 10%;
+    width: 20%;
     height: 80%;
-    margin: 0 1rem;
+    margin: 0 var(--main-margin-padding);
   }
 
   #choiceTitle {
-    width: 30%;
+    width: 50%;
     font-size: 1.5rem;
   }
 
-  #rpsGame {
-    background-position: bottom;
-    background-size: contain;
-  }
-
   .playerChoiceTitle {
-    padding: 1rem;
-    font-size: 1.2rem;
+    padding: var(--main-margin-padding) 0;
+    font-size: 1rem;
+    width: 100%;
+    height: 25%;
   }
 
   #resultText {
@@ -251,6 +271,30 @@ button {
 
   #resetButton:hover,
   #resetButton:focus {
-    background: rgba(0, 0, 0, 0.205);
+    background: var(--main-title-background-color);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #choiceTitle {
+    width: 30%;
+  }
+
+  #inputButtons {
+    width: 60%;
+  }
+
+  #resetButton {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #rpsGame {
+    background-size: contain;
+  }
+
+  #inputButtons {
+    width: 50%;
   }
 }
